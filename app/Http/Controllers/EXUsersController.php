@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\EXUsers;
 use Illuminate\Routing\Controller;
 
 class EXUsersController extends Controller {
@@ -12,7 +13,14 @@ class EXUsersController extends Controller {
 	 */
 	public function index()
 	{
-		//
+        $conf['list'] = EXUsers::get()->toArray();
+dd($conf);
+        $conf['new'] = route('app.users.create');
+        $conf['edit'] = 'app.users.edit';
+        $conf['delete'] = 'app.users.delete';
+
+
+        return view('admin.adminList', $conf);
 	}
 
 	/**

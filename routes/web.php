@@ -20,3 +20,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['prefix' => '/users'], function () {
+    Route::get('/', ['as' => 'app.users.index', 'uses' => 'EXUsersController@index']);
+    Route::get('/edit', ['as' => 'app.user.show', 'uses' => 'FrontEndController@pageShow']);
+
+});
+
