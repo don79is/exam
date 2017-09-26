@@ -30,9 +30,9 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                       Some Blog
+                        Some Blog</a>
                         <a class="navbar-brand" href="{{ url('/upload') }}">
-                            Add record
+                            Add record</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
