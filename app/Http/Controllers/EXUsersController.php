@@ -12,7 +12,7 @@ class EXUsersController extends Controller {
 	 */
 	public function index()
 	{
-		//
+
 	}
 
 	/**
@@ -23,7 +23,7 @@ class EXUsersController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('upload');
 	}
 
 	/**
