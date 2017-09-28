@@ -18,5 +18,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/upload', ['as' => 'app.users.create', 'uses' => 'EXUsersController@create']);
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => 'home', 'middleware' => ['auth', 'user-check']], function () {
+    Route::get('/', ['as' => 'app.posts.index', 'uses' => 'EXPostsController@index']);
+    Route::get('/posts', ['as' => 'app.posts.create', 'uses' => 'EXPostsController@create']);
+    Route::post('/posts', ['as' => 'app.posts.store', 'uses' => 'EXPostsController@store']);
+    Route::group(['prefix' => '{id}'], function () {
+        Route::get('/', ['as' => 'app.posts.show', 'uses' => 'VRCategoriesController@adminShow']);
+    });
+});

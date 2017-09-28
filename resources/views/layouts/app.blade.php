@@ -31,7 +31,7 @@
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         Some Blog</a>
-                        <a class="navbar-brand" href="{{ url('/upload') }}">
+                        <a class="navbar-brand" href="{{ url('/home/posts') }}">
                             Add record</a>
                 </div>
 

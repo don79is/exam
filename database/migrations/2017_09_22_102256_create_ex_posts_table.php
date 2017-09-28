@@ -21,11 +21,11 @@ class CreateExPostsTable extends Migration {
 			$table->string('user_id', 36)->index('fk_ma_posts_ma_users1_idx');
 			$table->string('title');
 			$table->text('text');
-			$table->string('mime_type');
-			$table->string('path');
-			$table->integer('width');
-			$table->integer('size');
-			$table->integer('height');
+			$table->string('mime_type')->nullable();
+			$table->string('path')->nullable();
+			$table->integer('width')->nullable();
+			$table->integer('size')->nullable();
+			$table->integer('height')->nullable();
 		});
 	}
 
